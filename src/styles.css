@@ -53,17 +53,17 @@
   --radius: 1.25rem;
 
   /* Brand palette */
-  --brand-blue: oklch(0.62 0.19 258);        /* #2F80ED */
-  --brand-blue-dark: oklch(0.34 0.08 258);   /* #27374D */
-  --brand-green: oklch(0.74 0.19 145);       /* #34C759 */
-  --brand-orange: oklch(0.75 0.17 55);       /* #FF8A34 */
-  --brand-yellow: oklch(0.87 0.16 90);       /* #FFD34D */
-  --brand-purple: oklch(0.66 0.19 295);      /* #8B5CF6 */
+  --brand-blue: oklch(0.62 0.19 258); /* #2F80ED */
+  --brand-blue-dark: oklch(0.34 0.08 258); /* #27374D */
+  --brand-green: oklch(0.74 0.19 145); /* #34C759 */
+  --brand-orange: oklch(0.75 0.17 55); /* #FF8A34 */
+  --brand-yellow: oklch(0.87 0.16 90); /* #FFD34D */
+  --brand-purple: oklch(0.66 0.19 295); /* #8B5CF6 */
 
-  --brand-ink: oklch(0.34 0.08 258);         /* #27374D */
-  --brand-steel: oklch(0.72 0.03 258);       /* #A6B1C2 */
-  --brand-cloud: oklch(0.94 0.01 258);       /* #EAEFF5 */
-  --brand-mist: oklch(0.98 0.005 258);       /* #F6F8FB */
+  --brand-ink: oklch(0.34 0.08 258); /* #27374D */
+  --brand-steel: oklch(0.72 0.03 258); /* #A6B1C2 */
+  --brand-cloud: oklch(0.94 0.01 258); /* #EAEFF5 */
+  --brand-mist: oklch(0.98 0.005 258); /* #F6F8FB */
 
   --background: oklch(1 0 0);
   --foreground: var(--brand-ink);
@@ -93,6 +93,7 @@
 
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
   }
 
   body {
@@ -101,9 +102,17 @@
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+    -webkit-tap-highlight-color: transparent;
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: var(--font-display);
     letter-spacing: -0.02em;
   }
@@ -121,8 +130,9 @@
 }
 
 @utility card-hover {
-  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
-              box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1);
   &:hover {
     transform: translateY(-6px);
     box-shadow: 0 30px 60px -30px color-mix(in oklab, var(--brand-blue-dark) 35%, transparent);
@@ -130,8 +140,14 @@
 }
 
 @keyframes reveal-up {
-  from { opacity: 0; transform: translateY(24px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .reveal {
@@ -139,4 +155,28 @@
 }
 .reveal.in-view {
   animation: reveal-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* Hide scrollbar for horizontal scroll containers */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Smooth touch scrolling */
+@media (pointer: coarse) {
+  .card-hover:active {
+    transform: scale(0.98);
+  }
+}
+
+/* Mobile touch targets - minimum 44px */
+@media (max-width: 1023px) {
+  a,
+  button {
+    min-height: 2rem;
+  }
 }

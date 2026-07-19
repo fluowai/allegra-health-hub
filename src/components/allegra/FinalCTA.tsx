@@ -21,7 +21,8 @@ export function FinalCTA() {
                 Seu filho merece o melhor cuidado!
               </h2>
               <p className="mt-2 text-sm text-white/85">
-                Agende agora mesmo e proporcione mais qualidade de vida e desenvolvimento para quem você mais ama.
+                Agende agora mesmo e proporcione mais qualidade de vida e desenvolvimento para quem
+                você mais ama.
               </p>
             </div>
             <a
@@ -31,7 +32,10 @@ export function FinalCTA() {
               <MessageCircle className="h-4 w-4" /> AGENDAR CONSULTA
             </a>
           </div>
-          <Heart className="pointer-events-none absolute -right-2 bottom-2 h-24 w-24 text-brand-yellow/70" fill="currentColor" />
+          <Heart
+            className="pointer-events-none absolute -right-2 bottom-2 h-24 w-24 text-brand-yellow/70"
+            fill="currentColor"
+          />
         </div>
       </div>
     </section>

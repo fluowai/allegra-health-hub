@@ -10,6 +10,7 @@ import { Testimonials } from "@/components/allegra/Testimonials";
 import { Insurance } from "@/components/allegra/Insurance";
 import { FinalCTA } from "@/components/allegra/FinalCTA";
 import { Footer } from "@/components/allegra/Footer";
+import { FloatingWhatsApp } from "@/components/allegra/FloatingWhatsApp";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -21,7 +22,10 @@ export const Route = createFileRoute("/")({
           "Clínica Allegra: atendimento humanizado e equipe multidisciplinar em Odontopediatria, Pediatria, Psicologia, Fonoaudiologia, Nutrição e mais. Agende sua consulta.",
       },
       { property: "og:title", content: "Clínica Allegra — Centro Integrado de Saúde Infantil" },
-      { property: "og:description", content: "Cuidamos da saúde de quem você mais ama. Taguatinga/DF." },
+      {
+        property: "og:description",
+        content: "Cuidamos da saúde de quem você mais ama. Taguatinga/DF.",
+      },
     ],
     scripts: [
       {
@@ -63,6 +67,7 @@ function Index() {
         <FinalCTA />
       </main>
       <Footer />
+      <FloatingWhatsApp />
     </div>
   );
 }

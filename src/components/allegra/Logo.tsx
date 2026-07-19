@@ -5,7 +5,14 @@ export function Logo({ variant = "color" }: { variant?: "color" | "white" }) {
     <div className="flex items-center gap-2.5">
       <svg width="46" height="46" viewBox="0 0 46 46" fill="none" aria-hidden>
         <defs>
-          <linearGradient id="logo-mark" x1="0" y1="0" x2="46" y2="46" gradientUnits="userSpaceOnUse">
+          <linearGradient
+            id="logo-mark"
+            x1="0"
+            y1="0"
+            x2="46"
+            y2="46"
+            gradientUnits="userSpaceOnUse"
+          >
             <stop stopColor="#2F80ED" />
             <stop offset="0.6" stopColor="#8B5CF6" />
             <stop offset="1" stopColor="#FF8A34" />
@@ -24,11 +31,25 @@ export function Logo({ variant = "color" }: { variant?: "color" | "white" }) {
         />
       </svg>
       <div className="leading-tight">
-        <div className="font-display text-2xl font-extrabold" style={{ background: variant === "white" ? "white" : "linear-gradient(90deg,#2F80ED,#8B5CF6,#FF8A34)", WebkitBackgroundClip: "text", backgroundClip: "text", color: "transparent" }}>
+        <div
+          className="font-display text-2xl font-extrabold"
+          style={{
+            background:
+              variant === "white" ? "white" : "linear-gradient(90deg,#2F80ED,#8B5CF6,#FF8A34)",
+            WebkitBackgroundClip: "text",
+            backgroundClip: "text",
+            color: "transparent",
+          }}
+        >
           Allegra
         </div>
-        <div className="text-[9px] font-semibold uppercase tracking-[0.14em]" style={{ color: subColor }}>
-          Centro Integrado<br />de Saúde Infantil
+        <div
+          className="text-[9px] font-semibold uppercase tracking-[0.14em]"
+          style={{ color: subColor }}
+        >
+          Centro Integrado
+          <br />
+          de Saúde Infantil
         </div>
         {/* eslint-disable-next-line react/jsx-no-useless-fragment */}
         <span className="hidden">{nameGradient}</span>
