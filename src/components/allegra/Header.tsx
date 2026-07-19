@@ -37,13 +37,18 @@ export function Header() {
         </a>
 
         <nav className="hidden lg:flex items-center justify-center gap-8">
-          {NAV.map((item) => (
+          {NAV.map((item, i) => (
             <a
               key={item.href}
               href={item.href}
-              className="relative py-1.5 font-ui text-sm font-semibold text-brand-ink transition-colors hover:text-brand-blue"
+              className={`relative py-1.5 font-ui text-sm font-semibold transition-colors hover:text-brand-blue ${
+                i === 0 ? "text-brand-blue" : "text-brand-ink"
+              }`}
             >
               {item.label}
+              {i === 0 && (
+                <span className="absolute -bottom-1 left-1/2 h-0.5 w-6 -translate-x-1/2 rounded-full bg-brand-orange" />
+              )}
             </a>
           ))}
         </nav>
