@@ -24,11 +24,7 @@ export function Logo({ variant = "color" }: { variant?: "color" | "white" }) {
         {/* Child silhouette */}
         <circle cx="32" cy="18" r="3.5" fill="#FF8A34" />
         <path d="M25 40c0-4.5 3.2-8 7-8s7 3.5 7 8" fill="#FF8A34" />
-        {/* Heart */}
-        <path
-          d="M27.6 22.3c1-1.1 2.7-1.2 3.7-.1.8.8.8 2 .2 2.9l-3.9 4.1-3.9-4.1c-.6-.9-.6-2.1.2-2.9 1-1.1 2.7-1 3.7.1z"
-          fill="#FFD34D"
-        />
+
       </svg>
       <div className="leading-tight">
         <div
