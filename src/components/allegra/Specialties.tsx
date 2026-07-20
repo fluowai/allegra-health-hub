@@ -75,11 +75,11 @@ export function Specialties() {
           <div className="mt-4 h-1 w-16 rounded-full bg-brand-yellow" />
         </div>
 
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-7 lg:gap-5">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:flex lg:flex-wrap lg:justify-center lg:gap-6">
           {SPECIALTIES.map(({ icon: Icon, title, desc, color, bg }) => (
             <article
               key={title}
-              className="card-hover flex flex-col items-center rounded-3xl border border-brand-cloud bg-white p-5 text-center soft-shadow"
+              className="card-hover flex flex-col items-center rounded-3xl border border-brand-cloud bg-white p-5 text-center soft-shadow lg:w-[calc(25%-1.125rem)] max-w-sm w-full"
             >
               <div
                 className={`grid h-14 w-14 place-items-center rounded-2xl bg-current/5 sm:h-16 sm:w-16 ${color}`}

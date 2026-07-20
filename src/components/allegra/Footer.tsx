@@ -183,8 +183,21 @@ export function Footer() {
             reservados.
           </p>
           <p className="flex items-center gap-1">
-            Desenvolvido com <Heart className="h-3 w-3 fill-brand-orange text-brand-orange" /> por
-            Agência Digital
+            Desenvolvido com 
+            <svg width="14" height="14" viewBox="0 0 46 46" fill="none" aria-hidden>
+              <defs>
+                <linearGradient id="footer-logo-mark" x1="0" y1="0" x2="46" y2="46" gradientUnits="userSpaceOnUse">
+                  <stop stopColor="#2F80ED" />
+                  <stop offset="0.6" stopColor="#8B5CF6" />
+                  <stop offset="1" stopColor="#FF8A34" />
+                </linearGradient>
+              </defs>
+              <circle cx="15" cy="13" r="5" fill="url(#footer-logo-mark)" />
+              <path d="M4 40c0-7 5-12 11-12s11 5 11 12" fill="url(#footer-logo-mark)" />
+              <circle cx="32" cy="18" r="3.5" fill="#FF8A34" />
+              <path d="M25 40c0-4.5 3.2-8 7-8s7 3.5 7 8" fill="#FF8A34" />
+            </svg>
+            por Agência Digital
           </p>
         </div>
       </div>
