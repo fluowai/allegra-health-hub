@@ -65,15 +65,13 @@ export function Structure() {
           ))}
         </div>
 
-        {/* Desktop: grid with arrows */}
-        <div className="relative hidden lg:block">
+        {/* Desktop: grid without arrows */}
+        <div className="hidden lg:block w-full">
           <div className="grid grid-cols-5 gap-5">
-            {SLIDES.map((s, i) => (
+            {SLIDES.map((s) => (
               <figure
                 key={s.title}
-                className={`card-hover overflow-hidden rounded-3xl bg-white soft-shadow transition-all ${
-                  i === idx ? "ring-2 ring-brand-blue/50" : ""
-                }`}
+                className="card-hover overflow-hidden rounded-3xl bg-white soft-shadow transition-all"
               >
                 <div className="aspect-[4/3] overflow-hidden">
                   <img
@@ -92,21 +90,6 @@ export function Structure() {
               </figure>
             ))}
           </div>
-
-          <button
-            aria-label="Anterior"
-            onClick={prev}
-            className="absolute -left-3 top-1/2 -translate-y-1/2 grid h-11 w-11 place-items-center rounded-full bg-white text-brand-blue soft-shadow transition-colors hover:bg-brand-mist"
-          >
-            <ChevronLeft className="h-5 w-5" />
-          </button>
-          <button
-            aria-label="Próximo"
-            onClick={next}
-            className="absolute -right-3 top-1/2 -translate-y-1/2 grid h-11 w-11 place-items-center rounded-full bg-white text-brand-blue soft-shadow transition-colors hover:bg-brand-mist"
-          >
-            <ChevronRight className="h-5 w-5" />
-          </button>
         </div>
 
         {/* Mobile scroll dots */}
